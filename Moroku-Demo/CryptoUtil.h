@@ -8,6 +8,7 @@
 
 #ifndef _CryptoUtil_h_
 #define _CryptoUtil_h_
+#import <UIKit/UIKit.h>
 
 // JSON key strings
 extern NSString * const kUtcDate;
@@ -38,9 +39,9 @@ extern NSString * const kHttpDate;
 /**
  * Construct HMAC from request and NSData payload
  * @param content NSData object representing the content of the HTTP request. This is the output of JSONSeriializer
- * @param resourcePath the path of the URL request
+ * @param apiPath the path of the URL request
  * @param httpMethod (GET, PUT, POST, DELETE)
- * @param secretKey the key to use to perfrom the hashing
+ * @param secret the key to use to perfrom the hashing
  * @return an NSDictionary with the following keys :kBase64Md5Content, kHmacSha1kUtcDate
  */
 - (NSDictionary *) generateHMACWithContent:(NSData *)content

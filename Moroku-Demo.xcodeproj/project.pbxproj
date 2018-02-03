@@ -16,6 +16,7 @@
 		7855C149202566A5000D33F9 /* Moroku_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C148202566A5000D33F9 /* Moroku_DemoTests.m */; };
 		7855C154202566A5000D33F9 /* Moroku_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C153202566A5000D33F9 /* Moroku_DemoUITests.m */; };
 		7855C16820257FD2000D33F9 /* CryptoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C16720257FD2000D33F9 /* CryptoUtil.m */; };
+		7855C16B2025807C000D33F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7855C16A2025807C000D33F9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		7855C16520257D26000D33F9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		7855C16620257FD2000D33F9 /* CryptoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptoUtil.h; sourceTree = "<group>"; };
 		7855C16720257FD2000D33F9 /* CryptoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptoUtil.m; sourceTree = "<group>"; };
+		7855C16A2025807C000D33F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7855C16B2025807C000D33F9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +92,7 @@
 				7855C147202566A5000D33F9 /* Moroku-DemoTests */,
 				7855C152202566A5000D33F9 /* Moroku-DemoUITests */,
 				7855C12D202566A5000D33F9 /* Products */,
+				7855C1692025807C000D33F9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +141,14 @@
 				7855C155202566A5000D33F9 /* Info.plist */,
 			);
 			path = "Moroku-DemoUITests";
+			sourceTree = "<group>";
+		};
+		7855C1692025807C000D33F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7855C16A2025807C000D33F9 /* Foundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
