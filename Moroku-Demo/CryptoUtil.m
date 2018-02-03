@@ -192,9 +192,9 @@ NSString * const kHttpDate = @"Date";
 /**
  * Construct HMAC from request and NSData payload
  * @param content NSData object representing the content of the HTTP request. This is the output of JSONSeriializer
- * @param resourcePath the path of the URL request
+ * @param apiPath the path of the URL request
  * @param httpMethod (GET, PUT, POST, DELETE)
- * @param secretKey the key to use to perfrom the hashing
+ * @param secret the key to use to perfrom the hashing
  * @return an NSDictionary with the following keys :kBase64Md5Content, kHmacSha1kUtcDate
  */
 - (NSDictionary *) generateHMACWithContent:(NSData *)content
@@ -226,7 +226,7 @@ NSString * const kHttpDate = @"Date";
 
 
 /**
- * @param The input date
+ * @param date The input date
  * @return an NSSTring representtion of the NSDate in the form yyyyMMdd HH:mm:ss
  */
 -(NSString *) dateToUTCString:(NSDate *) date {
@@ -240,7 +240,7 @@ NSString * const kHttpDate = @"Date";
 
 /**
  * Perform MD5 hash of NSData and then B64 encode it
- * @param data The data to be hashed
+ * @param plainText The data to be hashed
  */
 - (NSString *)base64EncodedMD5Hash:(NSData *) plainText {
     unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
