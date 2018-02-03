@@ -15,6 +15,7 @@
 		7855C13F202566A5000D33F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C13E202566A5000D33F9 /* main.m */; };
 		7855C149202566A5000D33F9 /* Moroku_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C148202566A5000D33F9 /* Moroku_DemoTests.m */; };
 		7855C154202566A5000D33F9 /* Moroku_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C153202566A5000D33F9 /* Moroku_DemoUITests.m */; };
+		7855C16820257FD2000D33F9 /* CryptoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C16720257FD2000D33F9 /* CryptoUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,9 @@
 		7855C14F202566A5000D33F9 /* Moroku-DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Moroku-DemoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7855C153202566A5000D33F9 /* Moroku_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Moroku_DemoUITests.m; sourceTree = "<group>"; };
 		7855C155202566A5000D33F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7855C16520257D26000D33F9 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		7855C16620257FD2000D33F9 /* CryptoUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CryptoUtil.h; sourceTree = "<group>"; };
+		7855C16720257FD2000D33F9 /* CryptoUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CryptoUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,9 @@
 		7855C12E202566A5000D33F9 /* Moroku-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7855C16620257FD2000D33F9 /* CryptoUtil.h */,
+				7855C16720257FD2000D33F9 /* CryptoUtil.m */,
+				7855C16520257D26000D33F9 /* Constants.h */,
 				7855C12F202566A5000D33F9 /* AppDelegate.h */,
 				7855C130202566A5000D33F9 /* AppDelegate.m */,
 				7855C132202566A5000D33F9 /* ViewController.h */,
@@ -267,6 +274,7 @@
 			files = (
 				7855C134202566A5000D33F9 /* ViewController.m in Sources */,
 				7855C13F202566A5000D33F9 /* main.m in Sources */,
+				7855C16820257FD2000D33F9 /* CryptoUtil.m in Sources */,
 				7855C131202566A5000D33F9 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
