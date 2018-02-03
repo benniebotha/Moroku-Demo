@@ -16,7 +16,6 @@
 		7855C149202566A5000D33F9 /* Moroku_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C148202566A5000D33F9 /* Moroku_DemoTests.m */; };
 		7855C154202566A5000D33F9 /* Moroku_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C153202566A5000D33F9 /* Moroku_DemoUITests.m */; };
 		7855C16820257FD2000D33F9 /* CryptoUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C16720257FD2000D33F9 /* CryptoUtil.m */; };
-		7855C16B2025807C000D33F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7855C16A2025807C000D33F9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7855C16B2025807C000D33F9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

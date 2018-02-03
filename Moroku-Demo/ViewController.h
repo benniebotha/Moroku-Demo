@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CryptoUtil.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
 
+//Outlets
+IBOutlet UIButton * testerButton;
+}
+//Actions
+-(IBAction)buttonPressedWithSender:(id)sender;
 
 @end
 

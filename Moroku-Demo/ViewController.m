@@ -25,5 +25,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ * Method called for tester button press
+ * @param sender The button being pressed
+ */
+-(IBAction)buttonPressedWithSender:(id)sender{
+    
+}
+
 
 @end
