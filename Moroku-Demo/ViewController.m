@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.playerModel = [[BBPlayer alloc] init];
 }
 
 
@@ -114,7 +116,8 @@
    forHTTPHeaderField:@"Authorization"];
     [request setValue:[cryptDict objectForKey:kUtcDate] forHTTPHeaderField:@"Date"];
     [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-
+    
+    
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:
       ^(NSData * _Nullable data,
         NSURLResponse * _Nullable response,
@@ -123,6 +126,25 @@
           NSString *responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
           NSLog(@"Data received: %@", responseStr);
       }] resume];
+}
+
+
+
+
+-(IBAction)updatePressedWithSender:(id)sender{
+    [self.playerModel updatePlayerWithCompletionHandler:nil];
+}
+-(IBAction)magicPressedWithSender:(id)sender{
+    [self.playerModel eventMagicWithCompletionHandler:nil];
+}
+-(IBAction)rainbowPressedWithSender:(id)sender{
+    [self.playerModel achievementRainbowWithCompletionHandler:nil];
+}
+-(IBAction)nextTopPressedWithSender:(id)sender{
+    [self.playerModel nextTopWithCompletionHandler:nil];
+}
+-(IBAction)nextBottomPressedWithSender:(id)sender{
+    [self.playerModel nextBottomWithCompletionHandler:nil];
 }
 
 @end

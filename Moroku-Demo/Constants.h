@@ -15,7 +15,7 @@
 #define CLIENT_API_KEY @"7c409e175565f986f1efbf04dd436e93"
 #define CLIENT_SHARED_SECRET @"50c1c343c0032e2337a5817d6d37f684"
 #define GAME_SYSTEM_URL @"gameserver-sandbox.herokuapp.com"
-#define GAME_SYSTEM_URL @"gameserver-sandbox.herokuapp.com"
+#define FULL_GAME_SYSTEM_URL @"https://gameserver-sandbox.herokuapp.com"
 
 
 #endif /* Constants_h */

@@ -34,6 +34,46 @@
                                     <action selector="button2PressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QUK-Hh-ILP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qa-WL-3P7">
+                                <rect key="frame" x="121" y="120" width="132" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TestUpdateMethod"/>
+                                <connections>
+                                    <action selector="updatePressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xlT-Vh-Sge"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qro-F1-Ilz">
+                                <rect key="frame" x="152" y="158" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TestMagic"/>
+                                <connections>
+                                    <action selector="magicPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o6N-zR-Lrr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ehv-5A-Y7g">
+                                <rect key="frame" x="145" y="196" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="TestRainbow"/>
+                                <connections>
+                                    <action selector="rainbowPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V5d-wJ-M5M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jfc-5G-H0j">
+                                <rect key="frame" x="161" y="234" width="57" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="NextTop"/>
+                                <connections>
+                                    <action selector="nextTopPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wtR-YA-Qna"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9k-yb-Kaq">
+                                <rect key="frame" x="162" y="272" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="NextBot"/>
+                                <connections>
+                                    <action selector="nextBottomPressedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4QO-Le-eAy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
