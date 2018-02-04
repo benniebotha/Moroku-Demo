@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "CryptoUtil.h"
+#import "Constants.h"
 
 @interface ViewController : UIViewController{
 
@@ -16,6 +17,7 @@ IBOutlet UIButton * testerButton;
 }
 //Actions
 -(IBAction)buttonPressedWithSender:(id)sender;
+-(IBAction)button2PressedWithSender:(id)sender;
 
 @end
 
