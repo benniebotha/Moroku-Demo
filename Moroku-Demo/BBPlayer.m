@@ -43,7 +43,18 @@
         
         NSLog(@"\nAsync request for update complete \n");
         if (completionHandler != nil){
-            completionHandler(error);
+            //completionHandler(error);
+            if ([NSThread isMainThread])
+            {
+                completionHandler(error);
+            }
+            else
+            {
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    completionHandler(error);
+                });
+            }
         }
     }];
 }
@@ -98,7 +109,18 @@
         NSLog(@"Data received: %@", myString);
         
         if (completionHandler != nil){
-            completionHandler(error);
+            //completionHandler(error);
+            if ([NSThread isMainThread])
+            {
+                completionHandler(error);
+            }
+            else
+            {
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    completionHandler(error);
+                });
+            }
         }
     }];
 }
@@ -115,7 +137,18 @@
         NSLog(@"Data received: %@", myString);
         
         if (completionHandler != nil){
-            completionHandler(error);
+            //completionHandler(error);
+            if ([NSThread isMainThread])
+            {
+                completionHandler(error);
+            }
+            else
+            {
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    completionHandler(error);
+                });
+            }
         }
     }];
 }
@@ -141,7 +174,18 @@
         NSLog(@"Data received: %@", myString);
         
         if (completionHandler != nil){
-            completionHandler(error);
+            //completionHandler(error);
+            if ([NSThread isMainThread])
+            {
+                completionHandler(error);
+            }
+            else
+            {
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    completionHandler(error);
+                });
+            }
         }
     }];
 }
@@ -167,7 +211,18 @@
         NSLog(@"Data received: %@", myString);
         
         if (completionHandler != nil){
-            completionHandler(error);
+            if ([NSThread isMainThread])
+            {
+                completionHandler(error);
+            }
+            else
+            {
+                
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    completionHandler(error);
+                });
+            }
+            
         }
     }];
 }

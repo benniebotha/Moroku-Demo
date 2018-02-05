@@ -24,12 +24,17 @@
     IBOutlet UIImageView * avatarShirtView;
     IBOutlet UIView * avatarBorderView;
     
+    IBOutlet UIImageView * trophyView;
+    IBOutlet UIImageView * trophyShineView;
+    
     PlayerAtribs avatarTopID;
     PlayerAtribs avatarBottomID;
     
     
+    
+    
 }
-
+@property (weak) NSTimer *repeatingTimer;
 @property (atomic, strong) BBPlayer* playerModel;
 //Actions
 
@@ -40,6 +45,10 @@
 -(IBAction)nextBottomPressedWithSender:(id)sender;
 
 -(void)updateAvatarLook;
+
+-(void)trophyAnimation;
+
+-(void)updateRunloop:(UIViewController*) viewController;
 
 @end
 

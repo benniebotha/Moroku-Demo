@@ -41,7 +41,10 @@
     
     
     self.playerModel = [[BBPlayer alloc] init];
-    [self.playerModel updatePlayerWithCompletionHandler:nil];
+    
+    [self.playerModel updatePlayerWithCompletionHandler:^(NSError * _Nullable error) {
+        [self updateAvatarLook];
+    }];
     
     [popViewsR setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -105)];
     [popViewsG setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -105)];
@@ -98,6 +101,13 @@
         
     } completion:^(BOOL finished) {
         [self updateAvatarLook];
+        [self.repeatingTimer invalidate];
+        
+        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:5.0
+                                                          target:self selector:@selector(updateRunloop:)
+                                                        userInfo:self repeats:YES];
+        
+        self.repeatingTimer = timer;
     }];
     
 }
@@ -114,7 +124,10 @@
  * @param sender The button being pressed
  */
 -(IBAction)updatePressedWithSender:(id)sender{
-    [self.playerModel updatePlayerWithCompletionHandler:nil];
+    [self.playerModel updatePlayerWithCompletionHandler:^(NSError * _Nullable error) {
+        [self updateAvatarLook];
+    }];
+    [self trophyAnimation];
 }
 -(IBAction)magicPressedWithSender:(id)sender{
     [self.playerModel eventMagicWithCompletionHandler:nil];
@@ -179,5 +192,69 @@
         }];
     }
 }
+
+
+-(void)trophyAnimation{
+    [trophyView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5)];
+    [trophyShineView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5)];
+    
+    [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.35 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        CGAffineTransform transForAll = CGAffineTransformScale(CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -235), 0.3, 0.3);
+        [avatarShirtView setTransform:transForAll];
+        [avatarHairView setTransform:transForAll];
+        [avatarBorderView setTransform:transForAll];
+        [avatarView setTransform:transForAll];
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:0.5 delay:0.5 usingSpringWithDamping:0.35 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        
+        [trophyView setAlpha:1.0];
+        [trophyView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)];
+        
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:5.0 delay:0.7 usingSpringWithDamping:0.06 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        
+        [trophyShineView setAlpha:1.0];
+        [trophyShineView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)];
+        
+    } completion:^(BOOL finished) {
+        [UIView animateWithDuration:0.5 delay:2.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            
+            [trophyView setAlpha:0.0];
+            [trophyShineView setAlpha:0.0];
+            [trophyView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5)];
+            [trophyShineView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5)];
+            
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.35 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseIn animations:^{
+                
+                [avatarShirtView setTransform:CGAffineTransformIdentity];
+                [avatarHairView setTransform:CGAffineTransformIdentity];
+                [avatarBorderView setTransform:CGAffineTransformIdentity];
+                [avatarView setTransform:CGAffineTransformIdentity];
+                
+            } completion:^(BOOL finished) {
+                
+            }];
+            
+        }];
+    }];
+
+}
+
+-(void)updateRunloop:(UIViewController*) viewController{
+    [self.playerModel updatePlayerWithCompletionHandler:^(NSError * _Nullable error) {
+        [self updateAvatarLook];
+    }];
+    
+}
+
 
 @end

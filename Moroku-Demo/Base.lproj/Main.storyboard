@@ -101,6 +101,14 @@
                                 <rect key="frame" x="59" y="278" width="256" height="256"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="shine.png" translatesAutoresizingMaskIntoConstraints="NO" id="nhq-1u-XzG">
+                                <rect key="frame" x="0.0" y="218" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trophy.png" translatesAutoresizingMaskIntoConstraints="NO" id="1JI-18-ZOB">
+                                <rect key="frame" x="124" y="342" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.38039215686274508" green="0.75686274509803919" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -114,6 +122,8 @@
                         <outlet property="popViewsB" destination="l1n-ce-enc" id="FDL-Gb-KuY"/>
                         <outlet property="popViewsG" destination="CdU-ct-HUh" id="sNn-Ri-oUi"/>
                         <outlet property="popViewsR" destination="7K7-UC-Oam" id="0kz-zN-ha6"/>
+                        <outlet property="trophyShineView" destination="nhq-1u-XzG" id="0Rd-W5-X0j"/>
+                        <outlet property="trophyView" destination="1JI-18-ZOB" id="bYY-3N-Mgh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -125,5 +135,7 @@
         <image name="avatar.png" width="512" height="512"/>
         <image name="avatarHair1.png" width="512" height="512"/>
         <image name="avatarShirt1.png" width="512" height="512"/>
+        <image name="shine.png" width="512" height="512"/>
+        <image name="trophy.png" width="512" height="512"/>
     </resources>
 </document>
