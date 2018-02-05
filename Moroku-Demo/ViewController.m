@@ -16,121 +16,103 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view, typically from a nib.
     
+    avatarTopID = playerAttrib_top_1;
+    avatarBottomID = playerAttrib_bottom_1;
+    
+    avatarBorderView.layer.borderColor = [UIColor colorWithRed:0.27 green:0.53 blue:0.95 alpha:1.00].CGColor;
+    avatarBorderView.layer.borderWidth = 3.0;
+    avatarBorderView.layer.cornerRadius = 40.0;
+    
+    [avatarHairView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 500, 0)];
+    [avatarShirtView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, -500, 0)];
+    
+    [avatarBorderView setAlpha:0.0];
+    [avatarView setAlpha:0.0];
+    [avatarHairView setAlpha:1.0];
+    [avatarShirtView setAlpha:1.0];
+    
+    [avatarBorderView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 5.0, 5.0)];
+    [avatarView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 0.5, 0.5)];
+    [avatarHairView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 500, 0)];
+    
+    
+    
     self.playerModel = [[BBPlayer alloc] init];
+    [self.playerModel updatePlayerWithCompletionHandler:nil];
+    
+    [popViewsR setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -105)];
+    [popViewsG setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -105)];
+    [popViewsB setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -105)];
+    
+    [helloLabel setAlpha:0.0];
+    [helloLabel setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 0.4, 0.4)];
+    
+    [UIView animateWithDuration:1.0 delay:0.5 usingSpringWithDamping:0.4 initialSpringVelocity:0.8 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [helloLabel setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 1.0 , 1.0)];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:1.0 delay:0.35 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [helloLabel setAlpha:1.0];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:1.0 delay:2.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [helloLabel setTransform:CGAffineTransformScale(CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -342), 0.7, 0.7)];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:0.55 delay:1.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [popViewsR setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0)];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:0.6 delay:1.2 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [popViewsG setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -5)];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:0.65 delay:1.4 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [popViewsB setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -10)];
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    [UIView animateWithDuration:0.65 delay:3.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        [avatarBorderView setAlpha:1.0];
+        [avatarView setAlpha:1.0];
+        
+        [avatarBorderView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)];
+        [avatarView setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)];
+        
+        [avatarHairView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0)];
+        [avatarShirtView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0)];
+        
+    } completion:^(BOOL finished) {
+        [self updateAvatarLook];
+    }];
+    
 }
 
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    self.playerModel = nil;
 }
 
 /**
  * Method called for tester button press
  * @param sender The button being pressed
  */
--(IBAction)buttonPressedWithSender:(id)sender{
-    
-    NSString *apiKey         = CLIENT_API_KEY;
-    NSString *sharedSecret  = CLIENT_SHARED_SECRET;
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setHTTPMethod:@"GET"];
-    [request setURL:[NSURL URLWithString:@"https://gameserver-sandbox.herokuapp.com/bennie/client/players/bennie"]];
-    
-    CryptoUtil *cryptor = [[CryptoUtil alloc] init];
-    
-    NSDictionary *cryptDict = [cryptor generateHMACWithContent:[@"" dataUsingEncoding:NSUTF8StringEncoding]
-                                                  resourcePath:@"/bennie/client/players/bennie"
-                                                    httpMethod:@"GET"
-                                                     secretKey:sharedSecret];
- 
-    // Build HTTP request for API
-    // Set Content-MD5: header to          [cryptDict objectForKey:kBase64Md5Content]
-    // Set Authorization: header to          MY_API_KEY:[cryptDict objectForKey:kHmacSha1]
-    // Set Date: header to                     [cryptDict objectForKey:kUtcDate]
-    
-    [request setValue:[cryptDict objectForKey:kBase64Md5Content] forHTTPHeaderField:@"Content-MD5"];
-    [request setValue:[[apiKey  stringByAppendingString: @":"]
-                                stringByAppendingString:[cryptDict objectForKey:kHmacSha1]]
-                                forHTTPHeaderField:@"Authorization"];
-    [request setValue:[cryptDict objectForKey:kUtcDate] forHTTPHeaderField:@"Date"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:
-      ^(NSData * _Nullable data,
-        NSURLResponse * _Nullable response,
-        NSError * _Nullable error) {
-          
-          NSString *myString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-          NSLog(@"Data received: %@", myString);
-          
-          NSError *jsonError = nil;
-          NSDictionary *parsedJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-          if (parsedJSON != nil){
-              NSLog(@"POINTS:\n");
-              NSLog(@"\n %@", [[parsedJSON objectForKey: @"point_types"][0] objectForKey:@"amount"]);
-          }else{
-              NSLog(@"JSON object failed to parse");
-          }
-          
-          
-      }] resume];
-    
-}
-
--(IBAction)button2PressedWithSender:(id)sender{
-    NSString *apiKey         = ADMIN_API_KEY;
-    NSString *sharedSecret  = ADMIN_SHARED_SECRET;
-    
-    NSDictionary* sendData = @{@"player"               : @"bennie",
-                               @"external_event_id"    : @"Rainbow"
-                               };
-    NSError *jsonError = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:sendData options:0 error:&jsonError];
-    
-    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-
-    [request setURL:[NSURL URLWithString:@"https://gameserver-sandbox.herokuapp.com/bennie/admin/player_external_events"]];
-    [request setHTTPBody:jsonData];
-    [request setHTTPMethod:@"POST"];
-    
-    CryptoUtil *cryptor = [[CryptoUtil alloc] init];
-    
-    NSDictionary *cryptDict = [cryptor generateHMACWithContent:jsonData
-                                                  resourcePath:@"/bennie/admin/player_external_events"
-                                                    httpMethod:@"POST"
-                                                     secretKey:sharedSecret];
-    
-    // Build HTTP request for API
-    // Set Content-MD5: header to          [cryptDict objectForKey:kBase64Md5Content]
-    // Set Authorization: header to          MY_API_KEY:[cryptDict objectForKey:kHmacSha1]
-    // Set Date: header to                     [cryptDict objectForKey:kUtcDate]
-    
-    [request setValue:[cryptDict objectForKey:kBase64Md5Content] forHTTPHeaderField:@"Content-MD5"];
-    [request setValue:[[apiKey  stringByAppendingString: @":"]
-                       stringByAppendingString:[cryptDict objectForKey:kHmacSha1]]
-   forHTTPHeaderField:@"Authorization"];
-    [request setValue:[cryptDict objectForKey:kUtcDate] forHTTPHeaderField:@"Date"];
-    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-    
-    
-    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:
-      ^(NSData * _Nullable data,
-        NSURLResponse * _Nullable response,
-        NSError * _Nullable error) {
-
-          NSString *responseStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-          NSLog(@"Data received: %@", responseStr);
-      }] resume];
-}
-
-
-
-
 -(IBAction)updatePressedWithSender:(id)sender{
     [self.playerModel updatePlayerWithCompletionHandler:nil];
 }
@@ -145,6 +127,57 @@
 }
 -(IBAction)nextBottomPressedWithSender:(id)sender{
     [self.playerModel nextBottomWithCompletionHandler:nil];
+}
+
+-(void)updateAvatarLook{
+    if (self.playerModel.playerTop != avatarTopID){
+        NSString *newImageFileName = nil;
+        if (avatarTopID == playerAttrib_top_1){
+            avatarTopID = playerAttrib_top_2;
+            newImageFileName = @"avatarHair2.png";
+        }else{
+            avatarTopID = playerAttrib_top_1;
+            newImageFileName = @"avatarHair1.png";
+        }
+        
+        [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [avatarHairView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, -500, 0)];
+        } completion:^(BOOL finished) {
+            [avatarHairView setImage:[UIImage imageNamed:newImageFileName]];
+            [avatarHairView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 500, 0)];
+            
+            [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [avatarHairView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0)];
+            } completion:^(BOOL finished) {
+                
+            }];
+        }];
+        
+    }
+    
+    if (self.playerModel.playerBottom != avatarBottomID){
+        NSString *newImageFileName = nil;
+        if (avatarBottomID == playerAttrib_bottom_1){
+            avatarBottomID = playerAttrib_bottom_2;
+            newImageFileName = @"avatarShirt2.png";
+        }else{
+            avatarBottomID = playerAttrib_bottom_1;
+            newImageFileName = @"avatarShirt1.png";
+        }
+        
+        [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [avatarShirtView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 500, 0)];
+        } completion:^(BOOL finished) {
+            [avatarShirtView setImage:[UIImage imageNamed:newImageFileName]];
+            [avatarShirtView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, -500, 0)];
+            
+            [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:1.0 initialSpringVelocity:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [avatarShirtView setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, 0)];
+            } completion:^(BOOL finished) {
+                
+            }];
+        }];
+    }
 }
 
 @end

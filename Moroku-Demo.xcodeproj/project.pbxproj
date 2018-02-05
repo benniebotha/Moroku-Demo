@@ -23,6 +23,21 @@
 		7855C1772026EF62000D33F9 /* BBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C1762026EF62000D33F9 /* BBPlayer.m */; };
 		7855C1782026EF62000D33F9 /* BBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C1762026EF62000D33F9 /* BBPlayer.m */; };
 		7855C1792026EF62000D33F9 /* BBPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7855C1762026EF62000D33F9 /* BBPlayer.m */; };
+		78D2526720281A2500DE2229 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526220281A2400DE2229 /* avatar.png */; };
+		78D2526820281A2500DE2229 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526220281A2400DE2229 /* avatar.png */; };
+		78D2526920281A2500DE2229 /* avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526220281A2400DE2229 /* avatar.png */; };
+		78D2526A20281A2500DE2229 /* avatarHair1.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526320281A2400DE2229 /* avatarHair1.png */; };
+		78D2526B20281A2500DE2229 /* avatarHair1.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526320281A2400DE2229 /* avatarHair1.png */; };
+		78D2526C20281A2500DE2229 /* avatarHair1.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526320281A2400DE2229 /* avatarHair1.png */; };
+		78D2526D20281A2500DE2229 /* avatarShirt2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526420281A2500DE2229 /* avatarShirt2.png */; };
+		78D2526E20281A2500DE2229 /* avatarShirt2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526420281A2500DE2229 /* avatarShirt2.png */; };
+		78D2526F20281A2500DE2229 /* avatarShirt2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526420281A2500DE2229 /* avatarShirt2.png */; };
+		78D2527020281A2500DE2229 /* avatarHair2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526520281A2500DE2229 /* avatarHair2.png */; };
+		78D2527120281A2500DE2229 /* avatarHair2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526520281A2500DE2229 /* avatarHair2.png */; };
+		78D2527220281A2500DE2229 /* avatarHair2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526520281A2500DE2229 /* avatarHair2.png */; };
+		78D2527320281A2500DE2229 /* avatarShirt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526620281A2500DE2229 /* avatarShirt1.png */; };
+		78D2527420281A2500DE2229 /* avatarShirt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526620281A2500DE2229 /* avatarShirt1.png */; };
+		78D2527520281A2500DE2229 /* avatarShirt1.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2526620281A2500DE2229 /* avatarShirt1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +80,11 @@
 		7855C16A2025807C000D33F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		7855C1752026EF62000D33F9 /* BBPlayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBPlayer.h; sourceTree = "<group>"; };
 		7855C1762026EF62000D33F9 /* BBPlayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBPlayer.m; sourceTree = "<group>"; };
+		78D2526220281A2400DE2229 /* avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatar.png; sourceTree = "<group>"; };
+		78D2526320281A2400DE2229 /* avatarHair1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarHair1.png; sourceTree = "<group>"; };
+		78D2526420281A2500DE2229 /* avatarShirt2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarShirt2.png; sourceTree = "<group>"; };
+		78D2526520281A2500DE2229 /* avatarHair2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarHair2.png; sourceTree = "<group>"; };
+		78D2526620281A2500DE2229 /* avatarShirt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarShirt1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +136,7 @@
 		7855C12E202566A5000D33F9 /* Moroku-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				78D252612028125300DE2229 /* ImageAssets */,
 				7855C16520257D26000D33F9 /* Constants.h */,
 				7855C16620257FD2000D33F9 /* CryptoUtil.h */,
 				7855C16720257FD2000D33F9 /* CryptoUtil.m */,
@@ -158,6 +179,18 @@
 				7855C16A2025807C000D33F9 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78D252612028125300DE2229 /* ImageAssets */ = {
+			isa = PBXGroup;
+			children = (
+				78D2526220281A2400DE2229 /* avatar.png */,
+				78D2526320281A2400DE2229 /* avatarHair1.png */,
+				78D2526520281A2500DE2229 /* avatarHair2.png */,
+				78D2526620281A2500DE2229 /* avatarShirt1.png */,
+				78D2526420281A2500DE2229 /* avatarShirt2.png */,
+			);
+			path = ImageAssets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +299,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D2526720281A2500DE2229 /* avatar.png in Resources */,
 				7855C13C202566A5000D33F9 /* LaunchScreen.storyboard in Resources */,
+				78D2526D20281A2500DE2229 /* avatarShirt2.png in Resources */,
+				78D2526A20281A2500DE2229 /* avatarHair1.png in Resources */,
 				7855C139202566A5000D33F9 /* Assets.xcassets in Resources */,
+				78D2527320281A2500DE2229 /* avatarShirt1.png in Resources */,
+				78D2527020281A2500DE2229 /* avatarHair2.png in Resources */,
 				7855C137202566A5000D33F9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +314,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D2526B20281A2500DE2229 /* avatarHair1.png in Resources */,
+				78D2526820281A2500DE2229 /* avatar.png in Resources */,
+				78D2526E20281A2500DE2229 /* avatarShirt2.png in Resources */,
+				78D2527120281A2500DE2229 /* avatarHair2.png in Resources */,
+				78D2527420281A2500DE2229 /* avatarShirt1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +326,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78D2526C20281A2500DE2229 /* avatarHair1.png in Resources */,
+				78D2526920281A2500DE2229 /* avatar.png in Resources */,
+				78D2526F20281A2500DE2229 /* avatarShirt2.png in Resources */,
+				78D2527220281A2500DE2229 /* avatarHair2.png in Resources */,
+				78D2527520281A2500DE2229 /* avatarShirt1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +520,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bennie-Botha.Moroku-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -486,7 +534,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Bennie-Botha.Moroku-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

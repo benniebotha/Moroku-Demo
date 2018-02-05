@@ -14,19 +14,32 @@
 @interface ViewController : UIViewController{
     
 //Outlets
-IBOutlet UIButton * testerButton;
+    IBOutlet UILabel * helloLabel;
+    IBOutlet UIView * popViewsR;
+    IBOutlet UIView * popViewsG;
+    IBOutlet UIView * popViewsB;
+    
+    IBOutlet UIImageView * avatarView;
+    IBOutlet UIImageView * avatarHairView;
+    IBOutlet UIImageView * avatarShirtView;
+    IBOutlet UIView * avatarBorderView;
+    
+    PlayerAtribs avatarTopID;
+    PlayerAtribs avatarBottomID;
+    
+    
 }
 
 @property (atomic, strong) BBPlayer* playerModel;
 //Actions
--(IBAction)buttonPressedWithSender:(id)sender;
--(IBAction)button2PressedWithSender:(id)sender;
 
 -(IBAction)updatePressedWithSender:(id)sender;
 -(IBAction)magicPressedWithSender:(id)sender;
 -(IBAction)rainbowPressedWithSender:(id)sender;
 -(IBAction)nextTopPressedWithSender:(id)sender;
 -(IBAction)nextBottomPressedWithSender:(id)sender;
+
+-(void)updateAvatarLook;
 
 @end
 
