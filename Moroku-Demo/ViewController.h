@@ -11,6 +11,8 @@
 #import "Constants.h"
 #import "BBPlayer.h"
 
+#define UPDATE_RUNLOOP_UPDATE_TIME 5.0
+
 @interface ViewController : UIViewController{
     
 //Outlets
