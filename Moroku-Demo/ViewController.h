@@ -30,6 +30,11 @@
     PlayerAtribs avatarTopID;
     PlayerAtribs avatarBottomID;
     
+    IBOutlet UILabel * playerNameLabel;
+    IBOutlet UILabel * playerPointsLabel;
+    IBOutlet UIScrollView * achievementsScrollView;
+    
+    
     
     
     

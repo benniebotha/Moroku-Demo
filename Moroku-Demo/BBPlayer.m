@@ -30,6 +30,16 @@
             [self setPlayerTop:[[[parsedJSON objectForKey:@"avatar"] objectForKey:@"Top"] longValue]];
             [self setPlayerBottom:[[[parsedJSON objectForKey:@"avatar"] objectForKey:@"Bottom"] longValue]];
             
+            NSMutableArray *achievements = [[NSMutableArray alloc] init];
+            for (NSDictionary* achieve in [parsedJSON objectForKey:@"achievement_awards"]) {
+                BBAchievement * newAchievement = [[BBAchievement alloc] initWithAchievementID:[[achieve objectForKey:@"id"] longValue]
+                                                                              achievementName:[achieve objectForKey:@"name"]
+                                                                       achievementDescription:[achieve objectForKey:@"description"]
+                                                                          achievementImageURL:[achieve objectForKey:@"image_url"]];
+                [achievements addObject:newAchievement];
+            }
+            self.playerAchievements = achievements;
+            
             NSLog(@"\n\n RESULTS");
             NSLog(@"\nPlayer ID: %ld \n",self.playerID);
             NSLog(@"\nPlayer Name: %@ \n",self.playerName);

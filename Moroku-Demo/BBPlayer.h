@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Constants.h"
 #import "CryptoUtil.h"
+#import "BBAchievement.h"
 
 typedef enum PlayerAtribs : NSUInteger {
     playerAttrib_top_1 = 1,
@@ -24,6 +25,8 @@ typedef enum PlayerAtribs : NSUInteger {
 @property (nonatomic) long playerPoints;
 @property (nonatomic) PlayerAtribs playerTop;
 @property (nonatomic) PlayerAtribs playerBottom;
+@property (nonatomic) NSArray * _Nullable playerAchievements;
+
 
 -(void) updatePlayerWithCompletionHandler:(void (^_Nullable) (NSError * _Nullable error)) completionHandler;
 

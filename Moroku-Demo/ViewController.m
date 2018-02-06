@@ -42,9 +42,7 @@
     
     self.playerModel = [[BBPlayer alloc] init];
     
-    [self.playerModel updatePlayerWithCompletionHandler:^(NSError * _Nullable error) {
-        [self updateAvatarLook];
-    }];
+    [self.playerModel updatePlayerWithCompletionHandler:nil];
     
     [popViewsR setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -105)];
     [popViewsG setTransform:CGAffineTransformTranslate(CGAffineTransformIdentity, 0, -105)];
@@ -127,22 +125,78 @@
     [self.playerModel updatePlayerWithCompletionHandler:^(NSError * _Nullable error) {
         [self updateAvatarLook];
     }];
-    [self trophyAnimation];
 }
 -(IBAction)magicPressedWithSender:(id)sender{
-    [self.playerModel eventMagicWithCompletionHandler:nil];
+    [self.playerModel eventMagicWithCompletionHandler:^(NSError * _Nullable error) {
+        [self.playerModel updatePlayerWithCompletionHandler:^(NSError * _Nullable error) {
+            [self updateAvatarLook];
+        }];
+    }];
 }
 -(IBAction)rainbowPressedWithSender:(id)sender{
-    [self.playerModel achievementRainbowWithCompletionHandler:nil];
+    [self.playerModel achievementRainbowWithCompletionHandler:^(NSError * _Nullable error) {
+        if (error == nil){
+            [self trophyAnimation];
+        }
+    }];
 }
 -(IBAction)nextTopPressedWithSender:(id)sender{
     [self.playerModel nextTopWithCompletionHandler:nil];
+    if (self.playerModel.playerTop == playerAttrib_top_1){
+        self.playerModel.playerTop = playerAttrib_top_2;
+    }else{
+        self.playerModel.playerTop = playerAttrib_top_1;
+    }
+    [self updateAvatarLook];
 }
 -(IBAction)nextBottomPressedWithSender:(id)sender{
     [self.playerModel nextBottomWithCompletionHandler:nil];
+    
+    if (self.playerModel.playerBottom == playerAttrib_bottom_1){
+        self.playerModel.playerBottom = playerAttrib_bottom_2;
+    }else{
+        self.playerModel.playerBottom = playerAttrib_bottom_1;
+    }
+    
+    [self updateAvatarLook];
 }
 
 -(void)updateAvatarLook{
+    [playerNameLabel setText:self.playerModel.playerName];
+    
+    if (![playerPointsLabel.text isEqualToString:[NSString stringWithFormat:@"%ld", self.playerModel.playerPoints]]){
+        [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0.6 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [playerPointsLabel setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 2.0, 2.0)];
+        } completion:^(BOOL finished) {
+            [playerPointsLabel setText:[NSString stringWithFormat:@"%ld", self.playerModel.playerPoints]];
+            
+            [UIView animateWithDuration:0.5 delay:0.0 usingSpringWithDamping:0.4 initialSpringVelocity:0.9 options:UIViewAnimationOptionCurveEaseOut animations:^{
+                [playerPointsLabel setTransform:CGAffineTransformScale(CGAffineTransformIdentity, 1.0, 1.0)];
+            } completion:^(BOOL finished) {
+                
+            }];
+        }];
+    }
+    
+    //for testing many achievements:
+//    [self.playerModel setPlayerAchievements:@[[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"],[[BBAchievement alloc] initWithAchievementID:2 achievementName:@"test1" achievementDescription:@"" achievementImageURL:@"https://s3-ap-southeast-2.amazonaws.com/gameserver-sandbox/bennie/achievements/images/1/tattly_jessi_arrington_rainbow_web_design_01_grande.jpg?1517456714"]]];
+    
+    int count = 0;
+    for (BBAchievement * achieve in self.playerModel.playerAchievements) {
+        NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: [achieve.achievementImageURL stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"]]];
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageWithData: imageData]];
+        [imageView setAutoresizingMask:(UIViewAutoresizingFlexibleHeight & UIViewAutoresizingFlexibleWidth)];
+        [imageView setFrame:CGRectMake(0+(56*count), 0, 46, 46)];
+        [achievementsScrollView addSubview:imageView];
+        [achievementsScrollView setContentSize:CGSizeMake(56*count+46, 46)];
+        
+        [achieve printLogAchievement];
+        
+        count++;
+    }
+    
+    
+    
     if (self.playerModel.playerTop != avatarTopID){
         NSString *newImageFileName = nil;
         if (avatarTopID == playerAttrib_top_1){
@@ -252,6 +306,8 @@
 -(void)updateRunloop:(UIViewController*) viewController{
     [self.playerModel updatePlayerWithCompletionHandler:^(NSError * _Nullable error) {
         [self updateAvatarLook];
+        avatarBottomID = self.playerModel.playerBottom;
+        avatarTopID = self.playerModel.playerTop;
     }];
     
 }

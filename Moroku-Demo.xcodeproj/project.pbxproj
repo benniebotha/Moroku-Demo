@@ -44,6 +44,9 @@
 		78D2527B20282E7800DE2229 /* shine.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2527A20282E7700DE2229 /* shine.png */; };
 		78D2527C20282E7800DE2229 /* shine.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2527A20282E7700DE2229 /* shine.png */; };
 		78D2527D20282E7800DE2229 /* shine.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D2527A20282E7700DE2229 /* shine.png */; };
+		78D25280202926E000DE2229 /* BBAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D2527F202926E000DE2229 /* BBAchievement.m */; };
+		78D25281202926E000DE2229 /* BBAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D2527F202926E000DE2229 /* BBAchievement.m */; };
+		78D25282202926E000DE2229 /* BBAchievement.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D2527F202926E000DE2229 /* BBAchievement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +96,8 @@
 		78D2526620281A2500DE2229 /* avatarShirt1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = avatarShirt1.png; sourceTree = "<group>"; };
 		78D2527620282DA900DE2229 /* trophy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trophy.png; sourceTree = "<group>"; };
 		78D2527A20282E7700DE2229 /* shine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shine.png; sourceTree = "<group>"; };
+		78D2527E202926E000DE2229 /* BBAchievement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBAchievement.h; sourceTree = "<group>"; };
+		78D2527F202926E000DE2229 /* BBAchievement.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBAchievement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +155,8 @@
 				7855C16720257FD2000D33F9 /* CryptoUtil.m */,
 				7855C1752026EF62000D33F9 /* BBPlayer.h */,
 				7855C1762026EF62000D33F9 /* BBPlayer.m */,
+				78D2527E202926E000DE2229 /* BBAchievement.h */,
+				78D2527F202926E000DE2229 /* BBAchievement.m */,
 				7855C12F202566A5000D33F9 /* AppDelegate.h */,
 				7855C130202566A5000D33F9 /* AppDelegate.m */,
 				7855C132202566A5000D33F9 /* ViewController.h */,
@@ -358,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7855C134202566A5000D33F9 /* ViewController.m in Sources */,
+				78D25280202926E000DE2229 /* BBAchievement.m in Sources */,
 				7855C13F202566A5000D33F9 /* main.m in Sources */,
 				7855C16820257FD2000D33F9 /* CryptoUtil.m in Sources */,
 				7855C1772026EF62000D33F9 /* BBPlayer.m in Sources */,
@@ -371,6 +379,7 @@
 			files = (
 				7855C17120258A80000D33F9 /* CryptoUtil.m in Sources */,
 				7855C1782026EF62000D33F9 /* BBPlayer.m in Sources */,
+				78D25281202926E000DE2229 /* BBAchievement.m in Sources */,
 				7855C149202566A5000D33F9 /* Moroku_DemoTests.m in Sources */,
 				7855C1732025A6A5000D33F9 /* ViewController.m in Sources */,
 			);
@@ -382,6 +391,7 @@
 			files = (
 				7855C17220258A81000D33F9 /* CryptoUtil.m in Sources */,
 				7855C1792026EF62000D33F9 /* BBPlayer.m in Sources */,
+				78D25282202926E000DE2229 /* BBAchievement.m in Sources */,
 				7855C154202566A5000D33F9 /* Moroku_DemoUITests.m in Sources */,
 				7855C1742025A6A6000D33F9 /* ViewController.m in Sources */,
 			);
